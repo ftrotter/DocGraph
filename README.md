@@ -3,7 +3,7 @@ DocGraph Data
 
 The data release system for DocGraph, the doctor social graph
 
-This is a <a href='http://notonlyfor.com'>Not Only Development</a> and <a href='http://docgraph.org'>DocGraph Journal</a> project.
+This is a <a href='http://docgraph.org'>DocGraph Journal</a> project.
 
 DocGraph Software
 ========
