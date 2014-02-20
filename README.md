@@ -26,7 +26,7 @@ Enjoy,
 Data
 ========
 
-The DocGraph data set is available for download at <a href='http://notonlydev.com'>NotOnlyDev.com</a>
+The DocGraph data set is available for download at <a href='http://docgraph.org'>DocGraph.org</a>
 
 <a href='http://nppes.viva-it.com/NPI_Files.html'>NPESS data download (the node database)</a>
 
