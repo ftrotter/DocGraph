@@ -35,3 +35,43 @@ Documentation
 ========
 Take a look at the original <a href='http://strata.oreilly.com/2012/11/docgraph-open-social-doctor-data.html'>DocGraph Strata Article</a>
 
+Generally, running the command 
+
+```
+> php simple.php npi_data.currentversion.csv
+```
+
+This should output a new file called simple_npi.csv which will have just one taxonomy. The script chooses taxonomies based on the priority scales listed in [taxonomy.php](https://github.com/ftrotter/DocGraph/blob/master/taxonomy.php). Lower "priority" numbers in that file will be choosen over higher ones. Practically, if this means that you want to be sure that you get all of the Cardiologists in the data set, even if they are cross listed as Internal Medicine, then you need to find the two entries in the data (which look like this:
+```
+   '207RI0011X' => 
+  array (
+    'desc' => 'Interventional Cardiology',
+    'priority' => 5,
+  ),
+```
+.....
+``` 
+  '207R00000X' => 
+  array (
+    'desc' => 'Internal Medicine',
+    'priority' => 3,
+  ),
+```
+and change them to look like this:
+```
+   '207RI0011X' => 
+  array (
+    'desc' => 'Interventional Cardiology',
+    'priority' => 2,
+  ),
+``` 
+.....
+``` 
+    '207R00000X' => 
+  array (
+    'desc' => 'Internal Medicine',
+    'priority' => 3,
+  ),
+```  
+Now, the cardiology taxonomy will take priority and the script will prefer to Cardiologist. If you want to ensure that you have all the cardiologist no matter what.. just make the priority 1. I am pretty sure that there is no priority below 2 in the default file...
+  
